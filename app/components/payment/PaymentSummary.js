@@ -10,7 +10,7 @@ const options = [
 
 const optionsSeguros = [
     { caption: 'Básica', value: 'basica', image: 'memmed-1.png', price: 192 },
-    { caption: 'Plus', value: 'plus', image: 'memmed-1.png', price: 292 },
+    { caption: 'Plus', value: 'plus', image: 'memmed-2.png', price: 402 },
 ];
 
 const PaymentSummary = ({ order }) => {
@@ -20,6 +20,7 @@ const PaymentSummary = ({ order }) => {
     const [precioMemb, setPrecioMemb] = useState(0);
     const searchParams = useSearchParams();
     const quantity = searchParams.get('qty')
+    const finalPrice = searchParams.get('price')
 
     const handlePaymentChange = (event) => {
         setSelectedValuePayment(event.target.value);
@@ -204,7 +205,7 @@ const PaymentSummary = ({ order }) => {
                                 <img className="max-w-[50px]" src={`/images/products/${order.images[0].image}`} alt="product" />
                                 <p className="max-w-60">{order.title}</p>
                             </div>
-                            <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">${order.discount ? order.price - order.discount : order.price} MXN</h3>
+                            <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">${order.discount ? finalPrice - order.discount : finalPrice} MXN</h3>
                         </div>
 
                     ))}
@@ -294,13 +295,13 @@ const PaymentSummary = ({ order }) => {
                                 </div>
                                 <div className="flex gap-4 items-center">
                                     <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo con descuento</h3>
-                                    <p>${((order.price - order.discount) * quantity) + Number(precioMemb)} MXN</p>
+                                    <p>${((finalPrice - order.discount) * quantity) + Number(precioMemb)} MXN</p>
                                 </div>
                             </>
                             :
                             <div className="flex gap-4 items-center">
                                 <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo</h3>
-                                <p>${(order.price * quantity) + Number(precioMemb)} MXN</p>
+                                <p>${(finalPrice * quantity) + Number(precioMemb)} MXN</p>
                             </div>
                         }
 
@@ -309,7 +310,7 @@ const PaymentSummary = ({ order }) => {
                             className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-12 flex items-center justify-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer"
 
                         >
-                            <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                            <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-60 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                             <span className="relative text-white transition duration-300 group-hover:text-white ease">Comprar</span>
                         </button>
                     </div>

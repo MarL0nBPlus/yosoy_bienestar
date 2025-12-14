@@ -46,7 +46,10 @@ export const ProductsCopies = [
         images: [{
             image: "sim-1.png"
         }],
-        colors: [],
+        variant:[
+            {id: 1, price: 140, plan: 50, image: "sim-1.png"},
+            {id: 2, price: 160, plan: 70, image: "sim-1.png"}
+        ],
 
         featured_title_1: "Tu conexión simple, accesible y confiable",
         featured_text_1: "Es tu pase directo a una comunicación clara y un internet que acompaña tu ritmo sin complicarte la vida.",
@@ -71,7 +74,10 @@ export const ProductsCopies = [
         images: [{
             image: "esim-1.png"
         }],
-        colors: [],
+        variant:[
+            {id: 3, price: 100, plan: 50, image: "esim-1.png"},
+            {id: 4, price: 120, plan: 70, image: "esim-1.png"}
+        ],
 
         featured_title_1: "Conexión estable para lo que importa",
         featured_text_1: "Tu día fluye mejor cuando tu red responde. Con la eSIM Yo Soy Bienestar tienes señal confiable para mensajes, llamadas, reuniones o esa canción que quieres repetir.",
@@ -121,7 +127,10 @@ export const ProductsCopies = [
         images: [{
             image: "memmed-1.png"
         }],
-        colors: [],
+        variant:[
+            {id: 6, price: 402, plan: 300, image: "memmed-1.png"},
+            {id: 7, price: 602, plan: 500, image: "memmed-2.png"}
+        ],
 
         featured_title_1: "Nuestras Membresías Salud",
         featured_text_1: "Con nuestras Membresías de Salud Básica y Salud Plus, accede a atención médica, asesoría y servicios para ti, todo en una sola membresía accesible y pensada para acompañarte en cada etapa. Disfruta beneficios médicos y de bienestar desde solo $39 pesos adicionales en tus recargas de tiempo aire.",

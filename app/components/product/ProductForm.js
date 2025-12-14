@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id }) => {
+const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id, price, type }) => {
     const [quantity, setQuantity] = useState(initialQuantity);
     const [selectedColor, setSelectedColor] = useState('default');
     const router = useRouter()
@@ -51,7 +51,7 @@ const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id }) => {
     return (
         <form className='product-form'>
             {
-                colors.length > 0 ? (
+                colors ? (
                     <div>
                         <h2 className='text-[#777777] my-2'>Color</h2>
                         <div className='flex gap-1'>
@@ -105,7 +105,7 @@ const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id }) => {
                         */}
 
             <button type="button" 
-            onClick={() => router.push(`/payment_page/${id}?qty=${quantity}&color=${selectedColor}`)}
+            onClick={() => router.push(`/payment_page/${id}?qty=${quantity}&price=${price}&type=${type}&color=${selectedColor}`)}
                 className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-12 my-4 flex items-center justify-center w-full overflow-hidden uppercase text-[17px] relative group cursor-pointer"
 
             >
