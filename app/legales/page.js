@@ -67,7 +67,7 @@ export default function Legales() {
       <Header />
       <section className="pt-44">
         <div className="max-w-5xl leading-8 mx-auto">
-          <h2 className="text-[#9B264A] text-[50px] font-semibold py-14 ">Conoce los términos y condiciones de nuestras promociones vigentes.</h2>
+          <h2 className="text-[#9B264A] text-[50px] font-semibold py-14 leading-[54px]">Conoce los términos y condiciones de nuestras promociones vigentes.</h2>
         </div>
         <div className="border-y border-[#BA956040] bg-[#FFFDF7] pt-20 pb-12">
           <div className="max-w-5xl leading-8 mx-auto flex flex-col gap-4">
@@ -130,7 +130,7 @@ export default function Legales() {
           </div>
 
           <p className="flex gap-2 items-start ml-4 mb-4">
-            <span class="material-symbols-outlined text-[27px]! text-[#BA9560] mt-2">
+            <span className="material-symbols-outlined text-[27px]! text-[#BA9560] mt-2">
               error
             </span>
             Para los Usuarios Finales que tengan el beneficio de "Promoción Portabilidad Anexo 11 y 15 MBB", el bono se otorgará hasta 48 horas después de haber realizado la recarga y/o activación, aplica tanto para ofertas participantes del Anexo 11 y 15. El bono se otorgará sobre las activaciones y recargas que se realicen durante la vigencia de la promoción.</p>

@@ -18,9 +18,9 @@ export async function POST(req) {
     const emailHtml = await render(<SoporteEmailTemplate nombre={nombre} apellido={apellido} correo={correo} mensaje={mensaje} telefono={telefono} />);
 
     const msg = {
-            to: 'soporte@yosoybienestar.com', // Your email address
-            from: 'soporte@yosoybienestar.com', // Your verified SendGrid sender
-            subject: `Nuevo correo de contacto desde Blackfon`,
+            to: 'soporte@yosoybienestar.com',
+            from: 'soporte@yosoybienestar.com',
+            subject: `Nuevo correo de soporte desde Yo Soy Bienestar`,
             html: emailHtml,
         };
     

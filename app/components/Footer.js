@@ -62,35 +62,35 @@ const empresas = [
 const legales = [
     {
         name: "Derechos mínimos de usuarios",
-        url: "#"
+        url: "/legales/CARTA-DE-DERECHOS-MINIMOS_I-AM-ABUNDANCE.pdf"
     },
     {
         name: "Contrato de Adhesión Telefónica",
-        url: "#"
+        url: "/legales/I-Am-Abundance-S.A.P.I.-de-C.V.Internet-para-el-Bienestar_i.pdf"
     },
     {
         name: "Código de neutralidad de Red",
-        url: "#"
+        url: "/legales/Codigo-de-neutralidad-de-red.pdf"
     },
     {
         name: "Buscador de Tarifas IFT",
-        url: "#"
+        url: "https://tarifas.ift.org.mx/ift_visor/"
     },
     {
         name: "Para robo y extravío, escríbenos",
-        url: "#"
+        url: "mailto:contacto@yosoybienestar.com"
     },
     {
         name: "Seguridad y Justicia",
-        url: "#"
+        url: "/legales/Seguridad-y-justicia.pdf"
     },
     {
         name: "Protocolo de alerta común",
-        url: "#"
+        url: "/legales/Formato-Proteccion-Civil-I-Am-Abundance.pdf"
     },
     {
         name: "Términos y condiciones",
-        url: "#"
+        url: "/legales"
     },
     {
         name: "Aviso de privacidad",
@@ -147,7 +147,7 @@ const Footer = () => {
                         <ul className="">
                             {
                                 legales.map((item, idx) => (
-                                    <li key={idx}><a className="text-[#777777] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px] hover:text-[#9b264a] transition-all" href={item.url}>{item.name}</a></li>
+                                    <li key={idx}><a target="_blank" className="text-[#777777] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px] hover:text-[#9b264a] transition-all" href={item.url}>{item.name}</a></li>
                                 ))
                             }
                         </ul>
