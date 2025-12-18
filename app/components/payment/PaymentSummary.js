@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { useSearchParams } from 'next/navigation';
+import { createPaymentSession } from "@/app/services/paymentService";
 
 const options = [
     { label: 'tarjetas', value: 'card' },
@@ -13,14 +14,73 @@ const optionsSeguros = [
     { caption: 'Plus', value: 'plus', image: 'memmed-2.png', price: 402 },
 ];
 
-const PaymentSummary = ({ order }) => {
+const PaymentSummary = ({ order, productId }) => {
+
+    if (!order) {
+        return (
+            <section className="p-8 text-center">
+                <p className="text-red-600">
+                    No se encontró información del producto.
+                </p>
+            </section>
+        );
+    }
+
+    console.log("productId:", productId);
+
     const [selectedValuePayment, setSelectedValuePayment] = useState('card');
     const [membresiaCheck, setMembresiaCheck] = useState(false);
     const [selectedMembType, setSelectedMembType] = useState('');
     const [precioMemb, setPrecioMemb] = useState(0);
     const searchParams = useSearchParams();
-    const quantity = searchParams.get('qty')
-    const finalPrice = searchParams.get('price')
+    const quantity = searchParams.get('qty');
+    const finalPrice = searchParams.get('price');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const payload = {
+            name: formData.get("name"),
+            apellido: formData.get("apellido"),
+            phone: formData.get("phone"),
+            email: formData.get("email"),
+            calle: formData.get("calle"),
+            colonia: formData.get("colonia"),
+            alcaldia: formData.get("alcaldia"),
+            postal: formData.get("postal"),
+
+            quantity: Number(quantity),
+            basePrice: Number(finalPrice),
+            discount: order.discount || 0,
+
+            membresia: membresiaCheck,
+            membresiaType: selectedMembType,
+            membresiaPrice: precioMemb,
+
+            total:
+                order.discount
+                    ? ((finalPrice - order.discount) * quantity) + Number(precioMemb)
+                    : (finalPrice * quantity) + Number(precioMemb),
+        };
+
+        try {
+            const result = await createPaymentSession({
+                productId,
+                payload,
+            });
+
+            if (result?.paymentUrl) {
+                window.location.href = result.paymentUrl;
+            } else {
+                alert("No se pudo generar la URL de pago");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error al procesar el pago");
+        }
+    };
 
     const handlePaymentChange = (event) => {
         setSelectedValuePayment(event.target.value);
@@ -49,10 +109,9 @@ const PaymentSummary = ({ order }) => {
 
     };
 
-
     return (
         <section>
-            <form className='product-form flex flex-col sm:flex-row md:flex-row lg:flex-row justify-between'>
+            <form onSubmit={handleSubmit} className='product-form flex flex-col sm:flex-row md:flex-row lg:flex-row justify-between'>
                 <div className="flex-1 flex flex-col gap-6 p-8">
 
                     <div className="flex gap-4">
@@ -67,7 +126,7 @@ const PaymentSummary = ({ order }) => {
                     </div>
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
-                            <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Número telefonico</label>
+                            <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Número telefónico</label>
                             <input name="phone" id="phone" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu número telefonico." />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
@@ -205,7 +264,7 @@ const PaymentSummary = ({ order }) => {
                                 <img className="max-w-[50px]" src={`/images/products/${order.images[0].image}`} alt="product" />
                                 <p className="max-w-60">{order.title}</p>
                             </div>
-                            <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">${order.discount ? finalPrice - order.discount : finalPrice} MXN</h3>
+                            <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">${order?.discount ? finalPrice - order.discount : finalPrice} MXN</h3>
                         </div>
 
                     ))}
@@ -287,15 +346,15 @@ const PaymentSummary = ({ order }) => {
                     }
 
                     <div className="flex flex-col gap-4 items-end">
-                        {order.discount ?
+                        {order?.discount ?
                             <>
                                 <div className="flex gap-4 items-center">
                                     <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Descuento</h3>
-                                    <p>${order.discount} MXN</p>
+                                    <p>${order?.discount} MXN</p>
                                 </div>
                                 <div className="flex gap-4 items-center">
                                     <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo con descuento</h3>
-                                    <p>${((finalPrice - order.discount) * quantity) + Number(precioMemb)} MXN</p>
+                                    <p>${((finalPrice - order?.discount) * quantity) + Number(precioMemb)} MXN</p>
                                 </div>
                             </>
                             :
