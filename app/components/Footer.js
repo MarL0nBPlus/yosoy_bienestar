@@ -94,7 +94,7 @@ const legales = [
     },
     {
         name: "Aviso de privacidad",
-        url: "#"
+        url: "/aviso_privacidad"
     },
 ]
 

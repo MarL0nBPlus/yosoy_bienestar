@@ -2,7 +2,7 @@ import ReactCountryFlag from "react-country-flag"
 
 const Banners = () => {
     return (
-        <section className="sm:px-0 md:px-0 lg:px-0 px-4 py-20">
+        <section className="sm:px-0 md:px-0 lg:px-0 px-4 pt-20 pb-4">
             <div className="max-w-7xl mx-auto flex gap-4 flex-col sm:flex-row md:flex-row lg:flex-row">
                 <div className="bg-[#BA956040] p-4 rounded-[20px] flex-2">
                     <h3 className="text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] font-bold">Internet para el Bienestar</h3>
@@ -40,9 +40,6 @@ const Banners = () => {
                     <h3 className="text-white text-[30px] leading-8 font-bold">Hasta XX GB hasta por 30 días</h3>
                     <a href="" className="ml-auto w-8 h-8 flex items-center justify-center bg-[#EDEDED] rounded-full"><img src="/images/arrow.svg" alt="" /></a>
                 </div>
-            </div>
-            <div className="max-w-7xl mx-auto flex gap-4 flex-col sm:flex-row md:flex-row lg:flex-row mt-4">
-                <img src="/images/app-bienestar.png" alt="app" />
             </div>
         </section>
     )

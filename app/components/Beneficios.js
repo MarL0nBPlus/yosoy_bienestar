@@ -1,49 +1,62 @@
+import HtmlParser from "react-html-parser"
+
 const beneficios = [
     {
         icon_small: "cardiology",
-        icon_main: "volunteer_activism",
-        name: "Membresía de salud",
-        description: "Beneficios para ti desde $39 pesos.",
-        url: "#",
+        icon_main: "cardiology",
+        name: "Membresía de Salud Básica",
+        description: "30 días de suscripción",
+        url: "/product_page/membresiamed",
         color: "bg-[#D9EEF6]",
+        colorGrad: "from-[#386FB4] from-40% to-[#D9EEF6]",
+        textColor: "text-[#386FB4]"
+    },
+    {
+        icon_small: "",
+        icon_main: "",
+        name: "Membresía de Salud Básica",
+        description: `
+        30 días de suscripción
+        <h2 class="text-[25px] mt-4 leading-7 font-bold">Beneficios:</h2>
+        <ul class="list-disc ml-4">  
+            <li>Asistencia médica</li>
+            <li>Asistencia Psicológica</li>
+            <li>Asistencia Nutricional</li>
+            <li>Red de descuentos con médicos y laboratorios</li>
+            <li>Envio de ambulancia</li>
+        </ul>
+        `,
+        url: "/product_page/membresiamed",
+        color: "bg-[#D9EEF6]",
+        colorGrad: "from-[#386FB4] from-40% to-[#D9EEF6]",
         textColor: "text-[#386FB4]"
     },
     {
         icon_small: "cardiology",
-        icon_main: "volunteer_activism",
-        name: "Membresía de salud",
-        description: "Beneficios para ti desde $39 pesos.",
-        url: "#",
-        color: "bg-[#EACCFF]",
-        textColor: "text-[#512DB5]"
-    },
-    {
-        icon_small: "cardiology",
-        icon_main: "volunteer_activism",
-        name: "Membresía de salud",
-        description: "Beneficios para ti desde $39 pesos.",
-        url: "#",
-        color: "bg-[#D8FEC2]",
-        textColor: "text-[#2B8D54]"
-    },
-    {
-        icon_small: "cardiology",
-        icon_main: "volunteer_activism",
-        name: "Membresía de salud",
-        description: "Beneficios para ti desde $39 pesos.",
-        url: "#",
-        color: "bg-[#FFCCF0]",
-        textColor: "text-[#971099]"
-    },
-    {
-        icon_small: "cardiology",
-        icon_main: "volunteer_activism",
-        name: "Membresía de salud",
-        description: "Beneficios para ti desde $39 pesos.",
-        url: "#",
-        color: "bg-[#1F7556]",
+        icon_main: "heart_plus",
+        name: "Membresía de Salud Plus",
+        description: "30 días de suscripción",
+        url: "/product_page/membresiamed#plus",
+        color: "bg-[#BA9560]",
+        colorGrad: "from-[#8C724D] from-40% to-[#BA9560]",
         textColor: "text-white"
-    }
+    },
+    {
+        icon_small: "",
+        icon_main: "",
+        name: "Membresía de Salud Plus",
+        description: `
+        30 días de suscripción
+        <h2 class="text-[25px] mt-4 leading-7 font-bold">Beneficios:</h2>
+        <p>  
+            Todos los beneficios que incluye la Membresía de Salud Básica, más muchos servicios adicionales exclusivos.
+        </p>
+        `,
+        url: "/product_page/membresiamed#plus",
+        color: "bg-[#BA9560]",
+        colorGrad: "from-[#8C724D] from-40% to-[#BA9560]",
+        textColor: "text-white"
+    },
 ]
 const Beneficios = () => {
     return (
@@ -57,22 +70,36 @@ const Beneficios = () => {
                     Cambia de plan o cancela en cualquier momento y ahorra hasta 20% más que con otras compañías.</p>
             </div>
 
-            <div className="max-w-7xl mx-auto mt-20 gap-4 grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5">
+            <div className="max-w-7xl mx-auto mt-20 gap-4 grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4">
                 {
                     beneficios.map((item, idx) => (
-                        <div key={idx} className={`rounded-[20px] p-4 ${item.color}`}>
-                            <span className={`material-symbols-outlined text-[43px]! ${item.textColor}`}>
-                                {item.icon_small}
-                            </span>
-                            <div>
-                                <span className={`material-symbols-outlined text-[103px]! ${item.textColor} opacity-30 text-center mb-4 block!`}>
-                                    {item.icon_main}
-                                </span>
-                                <h2 className={`text-[25px] leading-7 ${item.textColor} font-bold`}>{item.name}</h2>
-                                <p className={`mb-4 ${item.textColor}`}>{item.description}</p>
+                        <div key={idx} className={`bg-radial ${item.colorGrad} p-3 rounded-3xl`}>
+                            <div className={`rounded-[20px] h-full flex flex-col justify-between p-4 ${item.color}`}>
+                                {
+                                    item.icon_small ?
+                                        <span className={`material-symbols-outlined text-[43px]! ${item.textColor}`}>
+                                            {item.icon_small}
+                                        </span>
+                                        :
+                                        ""
+                                }
+
+                                <div>
+                                    {
+                                        item.icon_main ?
+                                            <span className={`material-symbols-outlined text-[103px]! ${item.textColor} opacity-30 text-center mb-4 block!`}>
+                                                {item.icon_main}
+                                            </span>
+                                            :
+                                            ""
+                                    }
+                                    <h2 className={`text-[25px] leading-7 ${item.textColor} font-bold`}>{item.name}</h2>
+                                    <div className={`mb-4 ${item.textColor}`}>{HtmlParser(item.description)}</div>
+                                </div>
                                 <a href={item.url} className={`flex ${item.textColor} gap-2 items-center justify-end`}>Descubre más <span className="material-symbols-outlined">
                                     arrow_right_alt
                                 </span></a>
+
                             </div>
                         </div>
                     ))

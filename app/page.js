@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
 import PestanaFlotante from "./components/PestanaFlotante";
 import Planes from "./components/Planes";
+import PromoBanner from "./components/PromoBanner";
 import Servicios from "./components/Servicios";
 import Soporte from "./components/Soporte";
 import TiraHeader from "./components/TiraHeader";
@@ -30,6 +31,7 @@ export default function Home() {
       <Planes captions={true} />
       <Servicios />
       <Banners />
+      <PromoBanner/>
       <Beneficios/>
       <Soporte/>
       <Faqs/>

@@ -28,7 +28,7 @@ export default function CookieConsent() {
 
     return (
         <div>
-            <div className="fixed bottom-0 left-0 right-0 bg-[#898888] text-white p-4 rounded-3xl m-2 shadow-2xl">
+            <div className="z-50 fixed bottom-0 left-0 right-0 bg-[#898888] text-white p-4 rounded-3xl m-2 shadow-2xl">
                 <div className='max-w-7xl mx-auto flex items-start gap-8'>
                     <span className="material-symbols-outlined text-[80px]!">
                         cookie
@@ -62,7 +62,7 @@ export default function CookieConsent() {
             {
                 isSecondVisible ?
                     (
-                        <div className="fixed bottom-0 left-0 right-0 bg-[#9B264A] text-white p-4 rounded-3xl m-2 shadow-2xl">
+                        <div className="z-50 fixed bottom-0 left-0 right-0 bg-[#9B264A] text-white p-4 rounded-3xl m-2 shadow-2xl">
                             <div className='max-w-7xl mx-auto flex items-start gap-8'>
                                 <span className="material-symbols-outlined text-[80px]!">
                                     emergency_home
