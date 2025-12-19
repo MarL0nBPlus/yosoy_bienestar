@@ -25,7 +25,7 @@ export default function ConservaNumero() {
       <Notificacion
         title={notifTitle}
         text={notifText}
-        nurlotifUrl={notifUrl}
+        url={"/recargas_ysb"}
         alt={true} />
       <ConservaMenu active ={0} />
       <PlanesConserva />
@@ -33,7 +33,7 @@ export default function ConservaNumero() {
         <Notificacion
           title={notifTitle}
           text={notifText}
-          nurlotifUrl={notifUrl}
+          url={"/recargas_ysb"}
           alt={false}
           noTopMargin={true} />
         <TipoSim />

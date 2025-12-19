@@ -6,11 +6,11 @@ import ReactCountryFlag from 'react-country-flag'
 import Avisos from './Avisos'
 
 const navigation = [
-    { name: 'Comprar SIM', href: '/', current: false },
+    { name: 'Comprar SIM', href: '/conserva_numero', current: false },
     { name: 'Conserva tu número', href: '/conserva_numero', current: false },
-    { name: 'Recargas', href: '/recargas', current: false },
+    { name: 'Recargas', href: '/recargas_ysb', current: false },
     { name: 'Celulares', href: '/', current: false },
-    { name: 'Promociones', href: '/', current: false },
+    { name: 'Promociones', href: '/recargas', current: false },
 ]
 
 const subnavigation = [

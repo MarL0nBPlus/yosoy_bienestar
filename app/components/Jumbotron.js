@@ -20,7 +20,7 @@ const Jumbotron = ({ title, thecaption, cssClass, junBtn, junBtnUrl }) => {
             className="text-white bg-[#BA9560] hover:text-black border border-white rounded-[50px] py-2 px-10 sm:px-18 md:px-18 lg:px-18 flex items-center w-fit overflow-hidden uppercase text-[17px] tracking-[3px] relative group cursor-pointer"
             href={junBtnUrl}
           >
-            <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+            <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-white transition duration-300 group-hover:text-white ease">{junBtn}</span>
           </a> 
         </div>

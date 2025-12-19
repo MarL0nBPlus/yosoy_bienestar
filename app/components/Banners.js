@@ -32,13 +32,13 @@ const Banners = () => {
                     <img className="max-w-[100px]" src="/images/internet.svg" alt="" />
                     <p className="text-white text-[25px]">Grandes ahorros</p>
                     <h3 className="text-white text-[30px] leading-8 font-bold">Hasta 20% más barato que otros</h3>
-                    <a href="" className="ml-auto w-8 h-8 flex items-center justify-center bg-[#EDEDED] rounded-full"><img src="/images/arrow.svg" alt="" /></a>
+                    <a href="/recargas_ysb" className="ml-auto w-8 h-8 flex items-center justify-center bg-[#EDEDED] rounded-full"><img src="/images/arrow.svg" alt="" /></a>
                 </div>
                 <div className="bg-[#569E84] p-4 rounded-[20px] flex-1 flex flex-col justify-between items-start">
                     <img className="max-w-[150px]" src="/images/cfe.svg" alt="" />
                     <p className="text-white text-[25px]">Recarga fácil</p>
                     <h3 className="text-white text-[30px] leading-8 font-bold">Hasta XX GB hasta por 30 días</h3>
-                    <a href="" className="ml-auto w-8 h-8 flex items-center justify-center bg-[#EDEDED] rounded-full"><img src="/images/arrow.svg" alt="" /></a>
+                    <a href="/recargas_cfe" className="ml-auto w-8 h-8 flex items-center justify-center bg-[#EDEDED] rounded-full"><img src="/images/arrow.svg" alt="" /></a>
                 </div>
             </div>
         </section>

@@ -114,7 +114,7 @@ const Planes = ({ captions }) => {
                                         item.destacado ?
                                             <a
                                                 className="text-white bg-linear-65 from-[#FF5F00] to-[#DD2929] hover:text-black rounded-[50px] py-2 px-2 sm:px-12 md:px-12 lg:px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer mx-auto mt-6"
-                                                href="#"
+                                                href="/product_page/paquetegb"
                                             >
                                                 <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                                                 <span className="relative text-white transition duration-300 group-hover:text-white ease">Comprar SIM</span>
@@ -122,7 +122,7 @@ const Planes = ({ captions }) => {
                                             :
                                             <a
                                                 className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-2 sm:px-12 md:px-12 lg:px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer mx-auto mt-6"
-                                                href="#"
+                                                href="/product_page/paquetegb"
                                             >
                                                 <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                                                 <span className="relative text-white transition duration-300 group-hover:text-white ease">Comprar SIM</span>

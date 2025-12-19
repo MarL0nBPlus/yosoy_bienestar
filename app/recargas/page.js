@@ -20,7 +20,7 @@ export default function Recargas() {
       <Notificacion
         title={notifTitle}
         text={notifText}
-        nurlotifUrl={notifUrl}
+        url={"/recargas_ysb"}
         alt={false} />
       <Servicios />      
       <TiraHeader alt={true} />

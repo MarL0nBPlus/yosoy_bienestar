@@ -20,7 +20,7 @@ export default function Home() {
 3. Cobertura roaming hasta en 170 países y acceso a salas VIP de aeropuertos`
   const junCssClass = 'jumbotron-home'
   const junBtn = 'Ver más planes'
-  const junBtnUrl = '/about'
+  const junBtnUrl = '/portabilidad'
 
   return (
     <main>
