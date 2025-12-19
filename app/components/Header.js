@@ -7,7 +7,7 @@ import Avisos from './Avisos'
 
 const navigation = [
     { name: 'Comprar SIM', href: '/conserva_numero', current: false },
-    { name: 'Conserva tu número', href: '/conserva_numero', current: false },
+    { name: 'Conserva tu número', href: '/portabilidad', current: false },
     { name: 'Recargas', href: '/recargas_ysb', current: false },
     { name: 'Celulares', href: '/', current: false },
     { name: 'Promociones', href: '/recargas', current: false },
@@ -21,7 +21,7 @@ const subnavigation = [
 ]
 
 const greennavigation = [
-    { name: 'Soporte', href: '/', current: false },
+    { name: 'Soporte', href: '/#soporte', current: false },
     { name: 'Tiendas', href: '/', current: false },
     { name: 'Cobertura', href: '/', current: false },
 ]

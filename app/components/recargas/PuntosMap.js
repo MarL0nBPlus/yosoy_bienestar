@@ -45,7 +45,7 @@ const PuntosMap = () => {
                             className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-12 flex items-center justify-center w-full sm:w-fit md:w-fit lg:w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer"
 
                         >
-                            <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                            <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                             <span className="relative text-white transition duration-300 group-hover:text-white ease">Buscar</span>
                         </button>
                     </form>
@@ -82,8 +82,8 @@ const PuntosMap = () => {
                     className={`text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-12 mx-auto flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer`}
                     href="#"
                 >
-                    <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                    <span className="relative  transition duration-300 group-hover:text-white ease">ver más sitios</span>
+                    <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                    <span className="relative  transition duration-300 group-hover:text-white ease">Ubicar tiendas</span>
                 </a>
             </div>
         </section>

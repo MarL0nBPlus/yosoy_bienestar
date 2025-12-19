@@ -35,7 +35,7 @@ const Soporte = () => {
     };
 
     return (
-        <section className="sm:px-0 md:px-0 lg:px-0 px-4 pt-20">
+        <section id="soporte" className="sm:px-0 md:px-0 lg:px-0 px-4 pt-20">
 
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-[50px] text-[#9B264A]">¿Necesitas soporte?</h2>

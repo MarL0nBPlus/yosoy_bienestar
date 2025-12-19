@@ -19,7 +19,7 @@ export default function Home() {
 2. Membresías desde $199, con datos, llamadas y SMS en México, USA y Canadá <br>
 3. Cobertura roaming hasta en 170 países y acceso a salas VIP de aeropuertos`
   const junCssClass = 'jumbotron-home'
-  const junBtn = 'Ver más planes'
+  const junBtn = 'Cambiarme a Bienestar'
   const junBtnUrl = '/portabilidad'
 
   return (

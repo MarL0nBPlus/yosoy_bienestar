@@ -46,9 +46,9 @@ export const ProductsCopies = [
         images: [{
             image: "sim-1.png"
         }],
-        variant:[
-            {id: 1, price: 140, plan: 50, image: "sim-1.png"},
-            {id: 2, price: 160, plan: 70, image: "sim-1.png"}
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "sim-1.png" },
+            { id: 2, price: 160, plan: 70, image: "sim-1.png" }
         ],
 
         featured_title_1: "Tu conexión simple, accesible y confiable",
@@ -74,9 +74,9 @@ export const ProductsCopies = [
         images: [{
             image: "esim-1.png"
         }],
-        variant:[
-            {id: 3, price: 100, plan: 50, image: "esim-1.png"},
-            {id: 4, price: 120, plan: 70, image: "esim-1.png"}
+        variant: [
+            { id: 3, price: 100, plan: 50, image: "esim-1.png" },
+            { id: 4, price: 120, plan: 70, image: "esim-1.png" }
         ],
 
         featured_title_1: "Conexión estable para lo que importa",
@@ -94,7 +94,7 @@ export const ProductsCopies = [
     },
     {
         id: "paquetegb",
-
+        isTech: true,
         title: "Paquete de Gigabytes",
         price: 0,
         discount: 0,
@@ -102,7 +102,11 @@ export const ProductsCopies = [
         images: [{
             image: "pqgb-1.png"
         }],
-        colors: [],
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "pqgb-1.png" },
+            { id: 2, price: 160, plan: 70, image: "pqgb-1.png" }
+        ],
+        legend: "000GB por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
 
         featured_title_1: "Llamadas, mensajes ilimitados",
         featured_text_1: "Disfruta un servicio de conectividad confiable y de calidad que te mantiene en contacto en cualquier lugar, incluso en el extranjero. Con Yo Soy Bienestar, te ofrecemos soluciones ágiles y seguras para que siempre estés comunicado.",
@@ -119,7 +123,6 @@ export const ProductsCopies = [
     },
     {
         id: "membresiamed",
-
         title: "Membresía de Salud",
         price: 0,
         discount: 0,
@@ -127,9 +130,9 @@ export const ProductsCopies = [
         images: [{
             image: "memmed-1.png"
         }],
-        variant:[
-            {id: 6, price: 402, plan: 300, image: "memmed-1.png"},
-            {id: 7, price: 602, plan: 500, image: "memmed-2.png"}
+        variant: [
+            { id: 6, price: 402, plan: "Básica", image: "memmed-1.png" },
+            { id: 7, price: 602, plan: "Plus", image: "memmed-2.png" }
         ],
 
         featured_title_1: "Nuestras Membresías Salud",
@@ -147,7 +150,7 @@ export const ProductsCopies = [
     },
     {
         id: "cfe",
-
+        isTech: true,
         title: "Paquete de Gigabytes CFE",
         price: 0,
         discount: 0,
@@ -155,7 +158,11 @@ export const ProductsCopies = [
         images: [{
             image: "cfe-1.png"
         }],
-        colors: [],
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "cfe-1.png" },
+            { id: 2, price: 160, plan: 70, image: "cfe-1.png" }
+        ],
+        legend: "000GB por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
 
         featured_title_2: "Cobertura confiable donde estés",
         featured_text_2: "Disfruta gigabytes que realmente duran. Usa tus datos para redes sociales, videollamadas, estudio o trabajo sin sentir que se evaporan.",

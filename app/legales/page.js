@@ -784,7 +784,7 @@ export default function Legales() {
               error
             </span>
             Para los Usuarios Finales que tengan el beneficio de "Promoción Portabilidad Anexo 11 y 15 MBB", el bono se otorgará hasta 48 horas después de haber realizado la recarga y/o activación, aplica tanto para ofertas participantes del Anexo 11 y 15. El bono se otorgará sobre las activaciones y recargas que se realicen durante la vigencia de la promoción.</p>
-
+          
           <p>
             <strong>III: Condiciones aplicables:</strong>
           </p>

@@ -125,7 +125,7 @@ const ProductMain = ({ product }) => {
                                     <select onChange={handleChange} className='text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] rounded-[5px]' name='tipo' id='tipo'>
                                         {
                                             product.variant.map((item, idx) => (
-                                                <option value={idx} key={idx}>{item.plan} GB</option>
+                                                <option value={idx} key={idx}>{item.plan} {product.isTech ? "GB" : ""}</option>
                                             ))
                                         }
                                     </select>
@@ -135,6 +135,17 @@ const ProductMain = ({ product }) => {
                         </div>
                     ) : ""}
 
+                    {product.legend ?
+                        <p className="flex gap-2 items-start ml-4 mb-4">
+                            <span className="material-symbols-outlined text-[27px]! text-[#BA9560] mt-2">
+                                error
+                            </span>
+
+                            {product.legend}
+                            </p>
+                        :
+                        ""
+                    }
                     <ProductForm colors={colors} id={product.id} price={finalPrice} type={typeId} />
                 </div>
             </div>
