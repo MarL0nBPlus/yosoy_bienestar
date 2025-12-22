@@ -16,9 +16,14 @@ const faqs = [
         question: "¿Cómo hacer mi portabilidad?",
         answer: `Para hacer tu portabilidad, sólo debes de diseñar los siguientes pasos y obtén tu SIM Internet para el Bienestar para completar tu proceso de portabilidad.
 <br><br>
-1.Aumenta un nip de portabilidad llamando o mandando un mensaje de texto con la palabra NIP al 051. El sistema te regresará la llamada o un mensaje con tu NIP de portabilidad. No olvides solicitarlo desde el número que deseas portar.<br>
-2.Descarga la app de Internet para bienestar.<br>
-3.Abre el app de Internet para el bienestar. Selecciona la opción de porta tu número y completa tus datos.<br>
+<ol class="list-decimal ml-4">
+<li>Aumenta un nip de portabilidad llamando o mandando un mensaje de texto con la palabra NIP al 051. El sistema te regresará la llamada o un mensaje con tu NIP de portabilidad. No olvides solicitarlo desde el número que deseas portar.<br>
+</li>
+<li>Descarga la app de Internet para bienestar.<br>
+</li>
+<li>Abre el app de Internet para el bienestar. Selecciona la opción de porta tu número y completa tus datos.<br>
+</li>
+</ol>
 <br><br>
 Tu portabilidad será efectiva en las próximas 24 horas a 48 horas.
 Y ¡listo! dedícate a disfrutar de la mejor velocidad y beneficios.`
@@ -30,13 +35,21 @@ Conoce nuestra cobertura completa aquí en "cobertura" y pueblos mágicos dispon
     },
     {
         question: "¿Quienes son en Yo Soy Bienestar?",
-        answer: `Somos un grupo empresarial que brinda servicios de TI y comunicación de calidad y accesibles para todo México.
+        answer: `
+        <ul class="list-disc ml-4">
+        <li>Somos un grupo empresarial que brinda servicios de TI y comunicación de calidad y accesibles para todo México.
+</li>
+        <br><br>
+<li>Nuestro grupo cuenta con más de 30 años de experiencia en comercialización e implementación de servicios móviles. actualmente yo soy bienestar. Es un operador muy virtual con una alianza estratégica con Atlán Redes, Gobierno Federal y Gobiernos Estatales.
+</li>
 <br><br>
-Nuestro grupo cuenta con más de 30 años de experiencia en comercialización e implementación de servicios móviles. actualmente yo soy bienestar. Es un operador muy virtual con una alianza estratégica con Atlán Redes, Gobierno Federal y Gobiernos Estatales.
+<li>Contamos con capacidad financiera y tecnológica propia. También brindamos servicios de valor agregado.
+</li>
 <br><br>
-Contamos con capacidad financiera y tecnológica propia. También brindamos servicios de valor agregado.
-<br><br>
-Estamos dedicados a mejorar la calidad de vida de las personas a través de la comunicación y apoyando las mejoras en servicios de salud, educación y atención primaria, entre otras orgullosos de ser parte de la comunidad del gran pueblo mexicano.`
+<li>Estamos dedicados a mejorar la calidad de vida de las personas a través de la comunicación y apoyando las mejoras en servicios de salud, educación y atención primaria, entre otras orgullosos de ser parte de la comunidad del gran pueblo mexicano.
+</li>
+</ul>
+`
     },
     {
         question: "¿Porque Yo Soy Bienestar ofrece Internet para el Bienestar?",

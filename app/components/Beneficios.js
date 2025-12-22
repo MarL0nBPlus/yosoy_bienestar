@@ -11,26 +11,7 @@ const beneficios = [
         colorGrad: "from-[#386FB4] from-40% to-[#D9EEF6]",
         textColor: "text-[#386FB4]"
     },
-    {
-        icon_small: "",
-        icon_main: "",
-        name: "Membresía de Salud Básica",
-        description: `
-        30 días de suscripción
-        <h2 class="text-[25px] mt-4 leading-7 font-bold">Beneficios:</h2>
-        <ul class="list-disc ml-4">  
-            <li>Asistencia médica</li>
-            <li>Asistencia Psicológica</li>
-            <li>Asistencia Nutricional</li>
-            <li>Red de descuentos con médicos y laboratorios</li>
-            <li>Envio de ambulancia</li>
-        </ul>
-        `,
-        url: "/product_page/membresiamed",
-        color: "bg-[#D9EEF6]",
-        colorGrad: "from-[#386FB4] from-40% to-[#D9EEF6]",
-        textColor: "text-[#386FB4]"
-    },
+    
     {
         icon_small: "cardiology",
         icon_main: "heart_plus",
@@ -41,22 +22,7 @@ const beneficios = [
         colorGrad: "from-[#8C724D] from-40% to-[#BA9560]",
         textColor: "text-white"
     },
-    {
-        icon_small: "",
-        icon_main: "",
-        name: "Membresía de Salud Plus",
-        description: `
-        30 días de suscripción
-        <h2 class="text-[25px] mt-4 leading-7 font-bold">Beneficios:</h2>
-        <p>  
-            Todos los beneficios que incluye la Membresía de Salud Básica, más muchos servicios adicionales exclusivos.
-        </p>
-        `,
-        url: "/product_page/membresiamed#plus",
-        color: "bg-[#BA9560]",
-        colorGrad: "from-[#8C724D] from-40% to-[#BA9560]",
-        textColor: "text-white"
-    },
+   
 ]
 const Beneficios = () => {
     return (
@@ -70,7 +36,7 @@ const Beneficios = () => {
                     Cambia de plan o cancela en cualquier momento y ahorra hasta 20% más que con otras compañías.</p>
             </div>
 
-            <div className="max-w-7xl mx-auto mt-20 gap-4 grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4">
+            <div className="max-w-4xl mx-auto mt-20 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                 {
                     beneficios.map((item, idx) => (
                         <div key={idx} className={`bg-radial ${item.colorGrad} p-3 rounded-3xl`}>

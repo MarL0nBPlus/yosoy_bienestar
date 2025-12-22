@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import HtmlParser from 'react-html-parser';
+import { useState } from 'react';
 
 const planes = [
     {
@@ -50,6 +51,12 @@ const planes = [
 ]
 
 const Planes = ({ captions }) => {
+    const [isActive, setIsActive] = useState("");
+
+    const handleClick = (item) => {
+        setIsActive(item)
+    }
+
     return (
         <section className="sm:px-0 md:px-0 lg:px-0 px-4 py-20">
             {captions ?
@@ -94,7 +101,7 @@ const Planes = ({ captions }) => {
 
                     {planes.map((item, idx) => (
                         <SwiperSlide key={idx}>
-                            <div className={`${item.destacado ? "bg-[#FF5F00] shadow-2xl" : "bg-[#E3D3BD]"} rounded-[20px] p-1 relative`}>
+                            <div onClick={()=>handleClick(idx)} className={`${item.destacado ? "bg-[#FF5F00]" : "bg-[#E3D3BD]"} ${isActive === idx ? "shadow-2xl" : ""} hover:shadow-2xl transition-all cursor-pointer rounded-[20px] p-1 relative`}>
                                 {
                                     item.destacado ?
                                         <p className='text-[50px] absolute -top-10 -right-6'>🔥</p>
@@ -114,18 +121,18 @@ const Planes = ({ captions }) => {
                                         item.destacado ?
                                             <a
                                                 className="text-white bg-linear-65 from-[#FF5F00] to-[#DD2929] hover:text-black rounded-[50px] py-2 px-2 sm:px-12 md:px-12 lg:px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer mx-auto mt-6"
-                                                href="/product_page/paquetegb"
+                                                href={isActive === idx ? "/product_page/paquetegb" : ""}
                                             >
                                                 <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                                                <span className="relative text-white transition duration-300 group-hover:text-white ease">Comprar SIM</span>
+                                                <span className="relative text-white transition duration-300 group-hover:text-white ease">{isActive === idx ? "Comprar SIM" : "Seleccionar"}</span>
                                             </a>
                                             :
                                             <a
                                                 className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-2 sm:px-12 md:px-12 lg:px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer mx-auto mt-6"
-                                                href="/product_page/paquetegb"
+                                                href={isActive === idx ? "/product_page/paquetegb" : ""}
                                             >
                                                 <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                                                <span className="relative text-white transition duration-300 group-hover:text-white ease">Comprar SIM</span>
+                                                <span className="relative text-white transition duration-300 group-hover:text-white ease">{isActive === idx ? "Comprar SIM" : "Seleccionar"}</span>
                                             </a>
                                     }
                                 </div>

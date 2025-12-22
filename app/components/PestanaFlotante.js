@@ -14,7 +14,7 @@ const PestanaFlotante = () => {
                 <span className="relative text-white transition duration-300 group-hover:text-white ease">Comentarios</span>
             </button>
 
-            <a className="w-[50px] h-9 rounded-full p-1 bg-[#0FA82B] hover:bg-[#0c8522] transition-all flex justify-center items-center" href="#"><img src="/images/whats.svg" alt="" /></a>
+            <a className="w-[50px] rotate-90 h-9 rounded-full p-1 bg-[#0FA82B] hover:bg-[#0c8522] transition-all flex justify-center items-center" href="#"><img src="/images/whats.svg" alt="" /></a>
         </div>
     )
 }

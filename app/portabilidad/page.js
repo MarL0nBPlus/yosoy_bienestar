@@ -1,7 +1,5 @@
 import ConservaMenu from "../components/conserva/ConservaMenu";
 import FormTitular from "../components/conserva/FormTitular";
-import PlanesConserva from "../components/conserva/PlanesConserva";
-import TipoSim from "../components/conserva/TipoSim";
 import Faqs from "../components/Faqs";
 import Footer from "../components/Footer";
 import Header from "../components/Header";

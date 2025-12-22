@@ -112,7 +112,7 @@ const PaymentSummary = ({ order, productId }) => {
     return (
         <section>
             <form onSubmit={handleSubmit} className='product-form flex flex-col sm:flex-row md:flex-row lg:flex-row justify-between'>
-                <div className="flex-1 flex flex-col gap-6 p-8">
+                <div className="flex-1 flex flex-col gap-4 p-8">
 
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
@@ -155,7 +155,7 @@ const PaymentSummary = ({ order, productId }) => {
                         </div>
                     </div>
 
-                    <h2 className="text-[25px] text-[#B85564] font-bold my-12">Formas de pago</h2>
+                    <h2 className="text-[25px] text-[#B85564] font-bold mt-12">Formas de pago</h2>
                     {options.map((option) => (
                         <div key={option.value} className={`py-2`}>
                             <div className={`border-3 gap-2 border-[#E1E1E1] rounded-[10px] py-3 px-2 sm:px-10 md:px-10 lg:px-10 flex flex-col sm:flex-row mg:flex-row lg:flex-row justify-between items-center`}>
@@ -228,8 +228,11 @@ const PaymentSummary = ({ order, productId }) => {
                     ))}
 
 
-                    <hr className="border-[#BA9560] -mb-12" />
-                    <a className="p-3 border border-[#BA9560] rounded-[15px] text-#4D3A11 block w-fit mx-auto bg-white" href="#">Forma de pago</a>
+                    <div className="mt-10">
+                        <hr className="border-[#BA9560] -mb-7" />
+                        <a className="p-3 border border-[#BA9560] rounded-[15px] text-#4D3A11 block w-fit mx-auto bg-white" href="#">Forma de pago</a>
+                    </div> 
+
                     <p className="mt-3 text-[#777777] text-center max-w-[660px] mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum  sapien lectus, luctus eget lacinia in, ultricies a diam.</p>
 
                     <div className="flex gap-4">
@@ -277,8 +280,8 @@ const PaymentSummary = ({ order, productId }) => {
                         </span>
                         <div>
                             <div className="flex flex-col gap-1 w-full">
-                                <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Número de teléfono</label>
-                                <input name="phone" id="phone" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu número celular actual." />
+                                <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Ingresa tu cupón</label>
+                                <input name="phone" id="phone" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa el cupón." />
                             </div>
                             <div className="flex gap-2 mt-2">
                                 <span className="material-symbols-outlined text-[#BA9560]">

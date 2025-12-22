@@ -1,7 +1,7 @@
 const menu = [
     {
         text: "Obtener línea",
-        url: "/conserva_numero"
+        url: "/compra_sim"
     },
     {
         text: "Hacer portabilidad",

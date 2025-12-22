@@ -1,5 +1,161 @@
 export const ProductsCopies = [
     {
+        id: "sim",
+isTech: true,
+        title: "Compra de Sim - Yo Soy Bienestar",
+        price: 30,
+        discount: 0,
+        description: "Disfruta de toda la conectividad en redes y comunícate sin límites con una amplia cobertura roaming en hasta 170 países. Todo desde tu SIM física de telefonía Yo Soy Bienestar.",
+        images: [{
+            image: "sim-1.png"
+        }],
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 2, price: 160, plan: 70, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 3, price: 190, plan: 100, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 4, price: 220, plan: 130, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 5, price: 240, plan: 150, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 6, price: 280, plan: 190, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 7, price: 340, plan: 250, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 6, price: 390, plan: 300, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 7, price: 590, plan: 500, image: "sim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+        ],
+
+        featured_title_1: "Tu conexión simple, accesible y confiable",
+        featured_text_1: "Es tu pase directo a una comunicación clara y un internet que acompaña tu ritmo sin complicarte la vida.",
+        featured_photo_1: "sim-feat-1.png",
+
+        featured_title_2: "Cobertura confiable donde más la necesitas",
+        featured_text_2: "Comunicación sin enredos, pensada para acompañar tu día sin pedirte más de lo necesario. Aquí no hay trucos, solo una experiencia directa para que comuniques, navegues y vivas conectado a buen precio.",
+        featured_photo_2: "sim-feat-2.png",
+
+        featured_title_3: "Elige tu SIM y comienza a navegar con Bienestar",
+        featured_text_3: "Precios diseñados para que uses tu línea sin miedo al gasto. Pagas solo por lo que necesitas y siempre sabes en qué se va tu dinero.",
+        featured_photo_3: "sim-feat-3.png",
+
+    },
+
+    {
+        id: "esim",
+isTech: true,
+        title: "Compra de Esim - Yo Soy Bienestar",
+        price: 50,
+        discount: 0,
+        description: "Disfruta de todos los beneficios que obtendrías con nuestra SIM física, ahora desde una telefonía que contratas 100% online, sin chip y sin papeleo, aprovechando al máximo las ventajas que ofrece la tecnología eSIM.",
+        images: [{
+            image: "e-sim.png"
+        }],
+        variant: [
+            { id: 8, price: 100, plan: 50, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 9, price: 120, plan: 70, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 10, price: 150, plan: 100, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 11, price: 180, plan: 130, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 12, price: 200, plan: 150, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 13, price: 240, plan: 190, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 14, price: 300, plan: 250, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 15, price: 350, plan: 300, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+            { id: 16, price: 550, plan: 500, image: "esim-1.png", perks: `<li>✓  Redes Sociales Sin Limites</li> <li>✓  Llamadas y SMS Ilimitados</li> <li><strong>✓  Hasta TRIPLE Gigas</strong> </li>`, vigencia: "30 días" },
+        ],
+
+        featured_title_1: "Conexión estable para lo que importa",
+        featured_text_1: "Tu día fluye mejor cuando tu red responde. Con la eSIM Yo Soy Bienestar tienes señal confiable para mensajes, llamadas, reuniones o esa canción que quieres repetir.",
+        featured_photo_1: "esim-feat-1.png",
+
+        featured_title_2: "Tu línea lista en minutos. Sin esperas, sin complicaciones",
+        featured_text_2: "Con la eSIM de Yo Soy Bienestar te conectas de forma fácil y rápida. Actívala desde tu celular y disfruta una experiencia más práctica, moderna y ligera.",
+        featured_photo_2: "esim-feat-2.png",
+
+        featured_title_3: "Activación en minutos",
+        featured_text_3: "Con la eSIM tu línea cobra vida casi al instante. Solo compras, escaneas un código QR y listo. Todo sin esperas, sin plásticos y sin pasos escondidos.",
+        featured_photo_3: "esim-feat-3.png",
+
+    },
+
+    {
+        id: "membresiamed",
+        title: "Membresía de Salud",
+        price: 0,
+        discount: 0,
+        description: "Con nuestras membresías de Salud Básica y Salud Plus, accede a atención médica, asesoría y servicios para ti todo en una sola membresía accesible y pensar en acompañarte en cada etapa, desde solo $39 pesos adicionales en tu recarga de tiempo aire.",
+        images: [{
+            image: "memmed-1.png"
+        }],
+        variant: [
+            { id: 6, price: 402, plan: "Básica", image: "memmed-1.png" },
+            { id: 7, price: 602, plan: "Plus", image: "memmed-2.png" }
+        ],
+
+        featured_title_1: "Nuestras Membresías Salud",
+        featured_text_1: "Con nuestras Membresías de Salud Básica y Salud Plus, accede a atención médica, asesoría y servicios para ti, todo en una sola membresía accesible y pensada para acompañarte en cada etapa. Disfruta beneficios médicos y de bienestar desde solo $39 pesos adicionales en tus recargas de tiempo aire.",
+        featured_photo_1: "memmed-feat-1.png",
+
+        featured_title_2: "Beneficios de la membresía básica",
+        featured_text_2: "Se parte del grupo de personas que ya cuentan con los servicios de: asistencia médica, psicológica y nutricional, así como también descuentos en laboratorios y en envíos de ambulancias, cada uno de ellos incluidos en nuestra membresía básica.",
+        featured_photo_2: "memmed-feat-2.png",
+
+        featured_title_3: "Obtén más beneficios exclusivos con la membresía plus",
+        featured_text_3: "Disfrute de todos los servicios que ofrece la Membresía de Salud Básica, como también de algunos otros como son: seguro por muerte accidental, seguro de gastos médicos, asistencia nutricional, médica, funeraria, psicológica entre muchos más.",
+        featured_photo_3: "memmed-feat-3.png",
+
+    },
+
+    {
+        id: "paquetegb",
+        isTech: true,
+        title: "Paquete de Gigabytes",
+        price: 0,
+        discount: 0,
+        description: "Disfruta de todo el contenido multimedia en redes y permanece siempre en contacto en diferentes partes, gracias a nuestros paquetes accesibles pensados para cada tipo de uso.",
+        images: [{
+            image: "pqgb-1.png"
+        }],
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "pqgb-1.png" },
+            { id: 2, price: 160, plan: 70, image: "pqgb-1.png" }
+        ],
+        legend: "La cantidad de GB seleccionada por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
+
+        featured_title_1: "Llamadas, mensajes ilimitados",
+        featured_text_1: "Disfruta un servicio de conectividad confiable y de calidad que te mantiene en contacto en cualquier lugar, incluso en el extranjero. Con Yo Soy Bienestar, te ofrecemos soluciones ágiles y seguras para que siempre estés comunicado.",
+        featured_photo_1: "pqgb-feat-1.png",
+
+        featured_title_2: "Gigas que se adaptan a tu ritmo",
+        featured_text_2: "Hay opciones para quienes solo necesitan un empujón de datos y también para quienes viven pegados a la red. Tú eliges el tamaño que encaja con tu día.",
+        featured_photo_2: "pqgb-feat-2.png",
+
+        featured_title_3: "Ideal para trabajo, estudio y entretenimiento",
+        featured_text_3: "Gigas suficientes para reuniones, tareas, streaming ligero y tus apps de siempre.",
+        featured_photo_3: "pqgb-feat-3.png",
+
+    },
+
+    {
+        id: "cfe",
+        isTech: true,
+        title: "Paquete de Gigabytes CFE",
+        price: 0,
+        discount: 0,
+        description: "Disfruta de todo el contenido multimedia en redes y permanece siempre en contacto en diferentes partes, gracias a nuestros paquetes accesibles que van desde periodos de días hasta meses de servicio.",
+        images: [{
+            image: "cfe-1.png"
+        }],
+        variant: [
+            { id: 1, price: 140, plan: 50, image: "cfe-1.png" },
+            { id: 2, price: 160, plan: 70, image: "cfe-1.png" }
+        ],
+        legend: "La cantidad de GB seleccionada por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
+
+        featured_title_2: "Cobertura confiable donde estés",
+        featured_text_2: "Disfruta gigabytes que realmente duran. Usa tus datos para redes sociales, videollamadas, estudio o trabajo sin sentir que se evaporan.",
+        featured_photo_2: "cfe-feat-2.png",
+
+        featured_title_3: "Internet pensado para el bienestar de todos",
+        featured_text_3: "No es solo un paquete de datos, es una solución creada para reducir la brecha digital y llevar conectividad a más personas y comunidades.",
+        featured_photo_3: "cfe-feat-3.png",
+
+    },
+
+    {
         id: "blackfon",
 
         title: "Teléfono Inteligente BlackFon w555 Industrial 5.7” Android 12",
@@ -36,143 +192,7 @@ export const ProductsCopies = [
         featured_photo_3: "bf-feat-3.png",
 
     },
-    {
-        id: "sim",
 
-        title: "SIM Física de telefonía Yo Soy Bienestar",
-        price: 0,
-        discount: 0,
-        description: "Disfruta de toda la conectividad en redes y comunícate sin límites con una amplia cobertura roaming en hasta 170 países. Todo desde tu SIM física de telefonía Yo Soy Bienestar.",
-        images: [{
-            image: "sim-1.png"
-        }],
-        variant: [
-            { id: 1, price: 140, plan: 50, image: "sim-1.png" },
-            { id: 2, price: 160, plan: 70, image: "sim-1.png" }
-        ],
-
-        featured_title_1: "Tu conexión simple, accesible y confiable",
-        featured_text_1: "Es tu pase directo a una comunicación clara y un internet que acompaña tu ritmo sin complicarte la vida.",
-        featured_photo_1: "sim-feat-1.png",
-
-        featured_title_2: "Cobertura confiable donde más la necesitas",
-        featured_text_2: "Comunicación sin enredos, pensada para acompañar tu día sin pedirte más de lo necesario. Aquí no hay trucos, solo una experiencia directa para que comuniques, navegues y vivas conectado a buen precio.",
-        featured_photo_2: "sim-feat-2.png",
-
-        featured_title_3: "Elige tu SIM y comienza a navegar con Bienestar",
-        featured_text_3: "Precios diseñados para que uses tu línea sin miedo al gasto. Pagas solo por lo que necesitas y siempre sabes en qué se va tu dinero.",
-        featured_photo_3: "sim-feat-3.png",
-
-    },
-    {
-        id: "esim",
-
-        title: "SIM Digítal de telefonía Yo Soy Bienestar",
-        price: 0,
-        discount: 0,
-        description: "Disfruta de todos los beneficios que obtendrías con nuestra SIM física, ahora desde una telefonía que contratas 100% online, sin chip y sin papeleo, aprovechando al máximo las ventajas que ofrece la tecnología eSIM.",
-        images: [{
-            image: "esim-1.png"
-        }],
-        variant: [
-            { id: 3, price: 100, plan: 50, image: "esim-1.png" },
-            { id: 4, price: 120, plan: 70, image: "esim-1.png" }
-        ],
-
-        featured_title_1: "Conexión estable para lo que importa",
-        featured_text_1: "Tu día fluye mejor cuando tu red responde. Con la eSIM Yo Soy Bienestar tienes señal confiable para mensajes, llamadas, reuniones o esa canción que quieres repetir.",
-        featured_photo_1: "esim-feat-1.png",
-
-        featured_title_2: "Tu línea lista en minutos. Sin esperas, sin complicaciones",
-        featured_text_2: "Con la eSIM de Yo Soy Bienestar te conectas de forma fácil y rápida. Actívala desde tu celular y disfruta una experiencia más práctica, moderna y ligera.",
-        featured_photo_2: "esim-feat-2.png",
-
-        featured_title_3: "Activación en minutos",
-        featured_text_3: "Con la eSIM tu línea cobra vida casi al instante. Solo compras, escaneas un código QR y listo. Todo sin esperas, sin plásticos y sin pasos escondidos.",
-        featured_photo_3: "esim-feat-3.png",
-
-    },
-    {
-        id: "paquetegb",
-        isTech: true,
-        title: "Paquete de Gigabytes",
-        price: 0,
-        discount: 0,
-        description: "Disfruta de todo el contenido multimedia en redes y permanece siempre en contacto en diferentes partes, gracias a nuestros paquetes accesibles pensados para cada tipo de uso.",
-        images: [{
-            image: "pqgb-1.png"
-        }],
-        variant: [
-            { id: 1, price: 140, plan: 50, image: "pqgb-1.png" },
-            { id: 2, price: 160, plan: 70, image: "pqgb-1.png" }
-        ],
-        legend: "000GB por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
-
-        featured_title_1: "Llamadas, mensajes ilimitados",
-        featured_text_1: "Disfruta un servicio de conectividad confiable y de calidad que te mantiene en contacto en cualquier lugar, incluso en el extranjero. Con Yo Soy Bienestar, te ofrecemos soluciones ágiles y seguras para que siempre estés comunicado.",
-        featured_photo_1: "pqgb-feat-1.png",
-
-        featured_title_2: "Gigas que se adaptan a tu ritmo",
-        featured_text_2: "Hay opciones para quienes solo necesitan un empujón de datos y también para quienes viven pegados a la red. Tú eliges el tamaño que encaja con tu día.",
-        featured_photo_2: "pqgb-feat-2.png",
-
-        featured_title_3: "Ideal para trabajo, estudio y entretenimiento",
-        featured_text_3: "Gigas suficientes para reuniones, tareas, streaming ligero y tus apps de siempre.",
-        featured_photo_3: "pqgb-feat-3.png",
-
-    },
-    {
-        id: "membresiamed",
-        title: "Membresía de Salud",
-        price: 0,
-        discount: 0,
-        description: "Con nuestras membresías de Salud Básica y Salud Plus, accede a atención médica, asesoría y servicios para ti todo en una sola membresía accesible y pensar en acompañarte en cada etapa, desde solo $39 pesos adicionales en tu recarga de tiempo aire.",
-        images: [{
-            image: "memmed-1.png"
-        }],
-        variant: [
-            { id: 6, price: 402, plan: "Básica", image: "memmed-1.png" },
-            { id: 7, price: 602, plan: "Plus", image: "memmed-2.png" }
-        ],
-
-        featured_title_1: "Nuestras Membresías Salud",
-        featured_text_1: "Con nuestras Membresías de Salud Básica y Salud Plus, accede a atención médica, asesoría y servicios para ti, todo en una sola membresía accesible y pensada para acompañarte en cada etapa. Disfruta beneficios médicos y de bienestar desde solo $39 pesos adicionales en tus recargas de tiempo aire.",
-        featured_photo_1: "memmed-feat-1.png",
-
-        featured_title_2: "Beneficios de la membresía básica",
-        featured_text_2: "Se parte del grupo de personas que ya cuentan con los servicios de: asistencia médica, psicológica y nutricional, así como también descuentos en laboratorios y en envíos de ambulancias, cada uno de ellos incluidos en nuestra membresía básica.",
-        featured_photo_2: "memmed-feat-2.png",
-
-        featured_title_3: "Obtén más beneficios exclusivos con la membresía plus",
-        featured_text_3: "Disfrute de todos los servicios que ofrece la Membresía de Salud Básica, como también de algunos otros como son: seguro por muerte accidental, seguro de gastos médicos, asistencia nutricional, médica, funeraria, psicológica entre muchos más.",
-        featured_photo_3: "memmed-feat-3.png",
-
-    },
-    {
-        id: "cfe",
-        isTech: true,
-        title: "Paquete de Gigabytes CFE",
-        price: 0,
-        discount: 0,
-        description: "Disfruta de todo el contenido multimedia en redes y permanece siempre en contacto en diferentes partes, gracias a nuestros paquetes accesibles que van desde periodos de días hasta meses de servicio.",
-        images: [{
-            image: "cfe-1.png"
-        }],
-        variant: [
-            { id: 1, price: 140, plan: 50, image: "cfe-1.png" },
-            { id: 2, price: 160, plan: 70, image: "cfe-1.png" }
-        ],
-        legend: "000GB por treinta días, redes sociales ilimitadas, llamadas y sms ilimitados.",
-
-        featured_title_2: "Cobertura confiable donde estés",
-        featured_text_2: "Disfruta gigabytes que realmente duran. Usa tus datos para redes sociales, videollamadas, estudio o trabajo sin sentir que se evaporan.",
-        featured_photo_2: "cfe-feat-2.png",
-
-        featured_title_3: "Internet pensado para el bienestar de todos",
-        featured_text_3: "No es solo un paquete de datos, es una solución creada para reducir la brecha digital y llevar conectividad a más personas y comunidades.",
-        featured_photo_3: "cfe-feat-3.png",
-
-    },
     {
         id: "paquetetelefono",
 

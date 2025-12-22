@@ -112,6 +112,10 @@ const Footer = () => {
                             <a href="#"><img className="max-h-[18px]" src="/images/in.svg" alt="social" /></a>
                         </div>
                     </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    {/*
                     <div>
                         <h3 className="text-[#9B264A] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] mb-4">Clientes</h3>
                         <ul className="list-disc pl-4">
@@ -142,7 +146,9 @@ const Footer = () => {
                             }
                         </ul>
                     </div>
-                    <div>
+                    */}
+                    
+                    <div className="flex flex-col">
                         <h3 className="text-[#555555] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] mb-4">Legales</h3>
                         <ul className="">
                             {
@@ -159,11 +165,9 @@ const Footer = () => {
                 <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
                     <p className="text-[#8E6202] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] mb-6">Compra 100% Segura</p>
                     <div className="flex gap-4 justify-center items-center flex-col sm:flex-row md:flex-row lg:flex-row">
-                        <img className="max-h-[30px]" src="logo.svg" alt="logo" />
+                        <img className="max-h-[30px]" src="/logo.svg" alt="logo" />
                         <img className="max-h-[30px]" src="/images/mastercard.svg" alt="logo" />
                         <img className="max-h-[30px]" src="/images/visa.svg" alt="logo" />
-                        <img className="max-h-[30px]" src="/images/norton.svg" alt="logo" />
-                        <img className="max-h-[30px]" src="/images/macafi.svg" alt="logo" />
                     </div>
                     <p className="my-8 text-center text-[#535353] text-[12px]">
                         © 2025 Yo Soy Bienestar es marcas registradas a nombre de I AM ABUNDANCE y/o sus compañías afiliadas.  Internet para el Bienestar, es una marca registrada de PROMTEL. <br />
