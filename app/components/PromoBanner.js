@@ -1,7 +1,7 @@
 const PromoBanner = () => {
     return (
         <section className="px-4 sm:px-0 md:px-0 lg:px-0">
-            <div className="bg-[#EFEFEF] max-w-7xl mx-auto  rounded-[25px]">
+            <div className="max-w-7xl mx-auto  rounded-[25px]">
                 <div className="flex flex-col gap-4 bg-[url(/images/comboblackfongb.png)] bg-contain bg-bottom-right bg-no-repeat p-6 pb-24 sm:pb-6 md:pb-6 lg:pb-6">
                     <h2 className="font-black text-[#BA9560] text-[67px] leading-[67px]">El combo perfecto:</h2>
                     <p className="text-[30px] text-[#9B264A]">Activa, conecta y disfruta al instante</p>

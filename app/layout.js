@@ -9,7 +9,11 @@ const notoSans = Noto_Sans({
   subsets: ["latin"],
 });
 
+export const openGraphImage = { images: ['./images/logo_mail.png'] }
 export const metadata = {
+  openGraph: {
+    ...openGraphImage,
+  },
   title: "Yo Soy Bienestar",
   description: "¡Obtén gigas gratis y conserva tu mismo número!",
 };

@@ -17,7 +17,7 @@ const RecargaSubmenu = ({active}) => {
             <div className="bg-[#F2F2F2] rounded-t-[20px] w-fit p-4 mx-auto flex flex-col sm:flex-row md:flex-row lg:flex-row gap-4 justify-center">
                 {
                     menu.map((item, idx)=>(
-                        <a key={idx} href={item.url} className={`${active === idx ? item.color : "mix-blend-difference opacity-25 hover:mix-blend-normal hover:opacity-100" } hover:${item.color} rounded-[15px] flex justify-center p-2 max-w-[300px] w-[300px]`}><img className="w-[100px]" src={`/images/${item.logo}`} alt="" /></a>
+                        <a key={idx} href={item.url} className={`${active === idx ? item.color : "mix-blend-difference opacity-25" } hover:bg-[#C6A87C80] hover:mix-blend-normal hover:opacity-100 rounded-[15px] flex justify-center p-2 max-w-[300px] w-[300px]`}><img className="w-[100px]" src={`/images/${item.logo}`} alt="" /></a>
                     ))
                 }
             </div>

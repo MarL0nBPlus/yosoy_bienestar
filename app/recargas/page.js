@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Notificacion from "../components/Notificacion";
 import PestanaFlotante from "../components/PestanaFlotante";
 import Servicios from "../components/Servicios";
-import TiraHeader from "../components/TiraHeader";
+import TiraSimple from "../components/TiraSimple";
 
 const notifTitle = "Olvídate de hacer tus recargas mes a mes, Sin penalizaciones ni comisiones ocultas.";
 const notifText = "Adquiere tu línea del Bienestar con Renovación Automática y beneficios especiales.";
@@ -23,7 +23,7 @@ export default function Recargas() {
         url={"/recargas_ysb"}
         alt={false} />
       <Servicios />      
-      <TiraHeader alt={true} />
+      <TiraSimple alt={true} />
       <Beneficios/>
       <Continua/>
       <Footer/>

@@ -26,6 +26,15 @@ const PlanesConserva = () => {
     const [selectedPlan, setSelectedPlan] = useState("");
     const [selectedSim, setSelectedSim] = useState("");
     const [planes, setPlanes] = useState([]);
+    const [nombre, setNombre] = useState("");
+    const [apellido, setApellido] = useState("");
+    const [email, setEmail] = useState("");
+    const [telefono, setTelefono] = useState("");
+    const [calle, setCalle] = useState("");
+    const [colonia, setColonia] = useState("");
+    const [alcaldia, setAlcaldia] = useState("");
+    const [cp, setCp] = useState("");
+
 
     const handleClickPlan = (item) => {
         setSelectedPlan(item);
@@ -38,9 +47,35 @@ const PlanesConserva = () => {
         } else setPlanes(planesESIM)
     }
 
-    const handleSubmit = (e, formData) => {
+    const handleNombre = (e) => {
+        setNombre(e.target.value)
+    }
+    const handleApellido = (e) => {
+        setApellido(e.target.value)
+    }
+    const handleCorreo = (e) => {
+        setEmail(e.target.value)
+    }
+    const handleTelefono = (e) => {
+        setTelefono(e.target.value)
+    }
+    const handleCalle = (e) => {
+        setCalle(e.target.value)
+    }
+    const handleColonia = (e) => {
+        setColonia(e.target.value)
+    }
+    const handleAlcaldia = (e) => {
+        setAlcaldia(e.target.value)
+    }
+    const handleCp = (e) => {
+        setCp(e.target.value)
+    }
+
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        router.push(`/payment_page/${sim[selectedSim].id}?qty=1&price=${planes[selectedPlan].price}&type=${planes[selectedPlan].id}&form=${formData}`)
+        router.push(`/payment_page/${sim[selectedSim].id}?qty=1&price=${planes[selectedPlan].price}&type=${planes[selectedPlan].id}&nombre=${nombre}&apellido=${apellido}&email=${email}&telefono=${telefono}&calle=${calle}&colonia=${colonia}&alcaldia=${alcaldia}&cp=${cp}`)
     }
 
     return (
@@ -59,13 +94,13 @@ const PlanesConserva = () => {
                                     {
                                         item.discount > 0 ?
                                             <h3 className="text-[12px] line-through sm:text-[40px] md:text-[40px] lg:text-[40px] sm:leading-10 md:leading-10 lg:leading-10 text-[#9F2241] font-bold mx-auto">
-                                                ${item.price}MXN
+                                                ${item.price}.<sup>00</sup>
                                             </h3>
                                             :
                                             ""
                                     }
                                     <h2 className="text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] sm:leading-[70px] md:leading-[70px] lg:leading-[70px] text-[#9F2241] font-bold mx-auto">
-                                        ${item.price - item.discount}MXN
+                                        ${item.price - item.discount}.<sup>00</sup>
                                     </h2>
                                 </div>
                                 <a
@@ -127,12 +162,12 @@ const PlanesConserva = () => {
                                         </div>
 
                                         <div className='bg-white h-auto sm:h-[400px] md:h-[400px] lg:h-[400px] rounded-b-[15px] flex flex-col p-8'>
-                                            <p className='text-[18px] sm:text-[25px] md:text-[25px] lg:text-[25px] text-[#9F2241]'>Paquete <strong>{item.cantidad}</strong></p>
+                                            <p className='text-[18px] sm:text-[25px] md:text-[25px] lg:text-[25px] text-[#9F2241]'>Paquete de <strong>{item.plan}GB</strong></p>
                                             <hr className='border-[#D7D7D7] my-4' />
                                             <ul>
                                                 {HtmlParser(item.perks)}
                                             </ul>
-                                            <h2 className='text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] text-[#9F2241] font-bold mx-auto'><span className='text-[12px] sm:text-[60px] md:text-[60px] lg:text-[60px]'>$</span>{item.plan}.<sup>00</sup> </h2>
+                                            <h2 className='text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] text-[#9F2241] font-bold mx-auto'><span className='text-[12px] sm:text-[60px] md:text-[60px] lg:text-[60px]'>$</span>{item.price}.<sup>00</sup> </h2>
                                             <a
                                                 className={`${selectedPlan === idx ? "bg-[#9B264A] text-white" : "bg-transparent text-[#9B264A]"} border text-center border-[#9B264A] hover:text-black rounded-[50px] py-2 px-2 sm:px-12 md:px-12 lg:px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer mx-auto mt-6`}
 
@@ -160,43 +195,43 @@ const PlanesConserva = () => {
                             <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-4 w-full">
                                 <div className="flex-1 flex flex-col gap-1">
                                     <label className="text-[#9B2649]" htmlFor="name">Nombre</label>
-                                    <input id="name" name="name" type="text" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu nombre." required />
+                                    <input onChange={handleNombre} value={nombre} id="name" name="name" type="text" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu nombre." required />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-1">
                                     <label className="text-[#9B2649]" htmlFor="lastname">Apellido</label>
-                                    <input id="lastname" name="lastname" type="text" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu apellido." required />
+                                    <input onChange={handleApellido} value={apellido} id="lastname" name="lastname" type="text" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu apellido." required />
                                 </div>
                             </div>
 
                             <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-4 w-full">
                                 <div className="flex-1 flex flex-col gap-1">
                                     <label className="text-[#9B2649]" htmlFor="name">Correo electrónico</label>
-                                    <input id="email" name="email" type="email" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu correo electrónico." required />
+                                    <input onChange={handleCorreo} value={email} id="email" name="email" type="email" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu correo electrónico." required />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-1">
                                     <label className="text-[#9B2649]" htmlFor="name">Número telefonico</label>
-                                    <input id="phone" name="phone" type="tel" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu número actual." required />
+                                    <input onChange={handleTelefono} value={telefono} id="phone" name="phone" type="tel" className="flex-1 bg-white border-[#9B2649] placeholder:text-[#ABABAB] border rounded-[15px] p-2" placeholder="Ingresa tu número actual." required />
                                 </div>
                             </div>
 
                             <div className="flex gap-4">
                                 <div className="flex flex-col gap-1 w-full">
                                     <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Calle</label>
-                                    <input name="calle" id="calle" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa la calle." required />
+                                    <input onChange={handleCalle} value={calle} name="calle" id="calle" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa la calle." required />
                                 </div>
                                 <div className="flex flex-col gap-1 w-full">
                                     <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Colonía</label>
-                                    <input name="colonia" id="colonia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu colonia." required />
+                                    <input onChange={handleColonia} value={colonia} name="colonia" id="colonia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu colonia." required />
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div className="flex flex-col gap-1 w-full">
                                     <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Alcaldia</label>
-                                    <input name="alcaldia" id="alcaldia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu alcaldia." required />
+                                    <input onChange={handleAlcaldia} value={alcaldia} name="alcaldia" id="alcaldia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu alcaldia." required />
                                 </div>
                                 <div className="flex flex-col gap-1 w-full">
                                     <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">C.P.</label>
-                                    <input name="postal" id="postal" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu código postal." required />
+                                    <input onChange={handleCp} value={cp} name="postal" id="postal" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu código postal." required />
                                 </div>
                             </div>
 

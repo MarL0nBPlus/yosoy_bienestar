@@ -15,7 +15,7 @@ const TiraHeader = ({alt}) => {
                     className="text-white bg-[#BA9560] hover:text-black rounded-[50px] py-2 px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer"
                     href="/compra_sim"
                 >
-                    <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                    <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                     <span className="relative text-white transition duration-300 group-hover:text-white ease">registrarme</span>
                 </a>
 
@@ -23,7 +23,7 @@ const TiraHeader = ({alt}) => {
                     className={` ${alt ? "text-[#9B264A] bg-white font-medium":"text-white bg-[#9B264A]"} hover:text-black rounded-[50px] py-2 px-12 flex items-center w-fit overflow-hidden uppercase text-[17px] relative group cursor-pointer`}
                     href="/portabilidad"
                 >
-                    <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                    <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                     <span className="relative  transition duration-300 group-hover:text-white ease">cambiarme</span>
                 </a>
             </div>

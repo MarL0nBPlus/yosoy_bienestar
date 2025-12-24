@@ -5,13 +5,12 @@ import { createPaymentSession } from "@/app/services/paymentService";
 
 const options = [
     { label: 'tarjetas', value: 'card' },
-    { label: 'plataformas', value: 'paypal' },
     { label: 'other', value: 'cash' },
 ];
 
 const optionsSeguros = [
-    { caption: 'Básica', value: 'basica', image: 'memmed-1.png', price: 192 },
-    { caption: 'Plus', value: 'plus', image: 'memmed-2.png', price: 402 },
+    { caption: 'Básica', value: 'basica', image: 'memmed-1.png', price: 39 },
+    { caption: 'Plus', value: 'plus', image: 'memmed-2.png', price: 102 },
 ];
 
 const PaymentSummary = ({ order, productId }) => {
@@ -34,7 +33,42 @@ const PaymentSummary = ({ order, productId }) => {
     const [precioMemb, setPrecioMemb] = useState(0);
     const searchParams = useSearchParams();
     const quantity = searchParams.get('qty');
-    const finalPrice = searchParams.get('price');
+    const finalPrice = order.isBundle ? (order.price + Number(searchParams.get('price'))) : searchParams.get('price');
+    const image = order.variant ? order.variant.find(variant => String(variant.id) === searchParams.get('type')).image : order.images[0].image;
+
+    const [nombre, setNombre] = useState(searchParams.get('nombre') ? searchParams.get('nombre') : "");
+    const [apellido, setApellido] = useState(searchParams.get('apellido') ? searchParams.get('apellido') : "");
+    const [email, setEmail] = useState(searchParams.get('email') ? searchParams.get('email') : "");
+    const [telefono, setTelefono] = useState(searchParams.get('telefono') ? searchParams.get('telefono') : "");
+    const [calle, setCalle] = useState(searchParams.get('calle') ? searchParams.get('calle') : "");
+    const [colonia, setColonia] = useState(searchParams.get('colonia') ? searchParams.get('colonia') : "");
+    const [alcaldia, setAlcaldia] = useState(searchParams.get('alcaldia') ? searchParams.get('alcaldia') : "");
+    const [cp, setCp] = useState(searchParams.get('cp') ? searchParams.get('cp') : "");
+
+    const handleNombre = (e) => {
+        setNombre(e.target.value)
+    }
+    const handleApellido = (e) => {
+        setApellido(e.target.value)
+    }
+    const handleCorreo = (e) => {
+        setEmail(e.target.value)
+    }
+    const handleTelefono = (e) => {
+        setTelefono(e.target.value)
+    }
+    const handleCalle = (e) => {
+        setCalle(e.target.value)
+    }
+    const handleColonia = (e) => {
+        setColonia(e.target.value)
+    }
+    const handleAlcaldia = (e) => {
+        setAlcaldia(e.target.value)
+    }
+    const handleCp = (e) => {
+        setCp(e.target.value)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -90,7 +124,7 @@ const PaymentSummary = ({ order, productId }) => {
     const handleMembresiaChange = (event) => {
         if (event.target.checked === true) {
             setSelectedMembType('basica');
-            setPrecioMemb(192);
+            setPrecioMemb(39);
         }
         else {
             setSelectedMembType('');
@@ -103,11 +137,16 @@ const PaymentSummary = ({ order, productId }) => {
     const handlePrecioMembChange = (event) => {
         setSelectedMembType(event.target.value)
         if (event.target.value === 'basica') {
-            setPrecioMemb(192);
+            setPrecioMemb(39);
         }
-        else setPrecioMemb(292);
+        else setPrecioMemb(102);
 
     };
+
+    const formatterUS = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
 
     return (
         <section>
@@ -117,41 +156,41 @@ const PaymentSummary = ({ order, productId }) => {
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Nombre</label>
-                            <input name="name" id="name" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu nombre." />
+                            <input onChange={handleNombre} value={nombre} name="name" id="name" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu nombre." />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Apellido</label>
-                            <input name="apellido" id="apellido" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu apellido." />
+                            <input onChange={handleApellido} value={apellido} name="apellido" id="apellido" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu apellido." />
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Número telefónico</label>
-                            <input name="phone" id="phone" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu número telefonico." />
+                            <input onChange={handleTelefono} value={telefono} name="phone" id="phone" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu número telefonico." />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Correo electrónico</label>
-                            <input name="email" id="email" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="email" placeholder="Ingresa tu correo electrónico." />
+                            <input onChange={handleCorreo} value={email} name="email" id="email" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="email" placeholder="Ingresa tu correo electrónico." />
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Calle</label>
-                            <input name="calle" id="calle" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa la calle." />
+                            <input onChange={handleCalle} value={calle} name="calle" id="calle" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa la calle." />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Colonía</label>
-                            <input name="colonia" id="colonia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu colonia." />
+                            <input onChange={handleColonia} value={colonia} name="colonia" id="colonia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu colonia." />
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">Alcaldia</label>
-                            <input name="alcaldia" id="alcaldia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu alcaldia." />
+                            <input onChange={handleAlcaldia} value={alcaldia} name="alcaldia" id="alcaldia" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu alcaldia." />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-[#9B2649] text-[12px] sm:text-[15px] md:text-[15px] lg:text-[15px]">C.P.</label>
-                            <input name="postal" id="postal" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu código postal." />
+                            <input onChange={handleCp} value={cp} name="postal" id="postal" className="bg-white py-2 px-4 border border-[#B85564] rounded-[15px] placeholder:text-[#ABABAB] w-full" type="text" placeholder="Ingresa tu código postal." />
                         </div>
                     </div>
 
@@ -183,45 +222,25 @@ const PaymentSummary = ({ order, productId }) => {
                                                 <img src="/images/amex.svg" alt="logo" />
                                             </div>
                                         </>
-                                        : option.value === "paypal" ?
-                                            <>
-                                                <div className='flex text-left gap-2 items-center'>
+                                        :
+                                        <>
+                                            <div className='flex text-left gap-2 items-center'>
 
-                                                    <input
-                                                        type="radio"
-                                                        id={option.value}
-                                                        name="payment" // All radios in a group share the same name
-                                                        value={option.value}
-                                                        checked={selectedValuePayment === option.value}
-                                                        onChange={handlePaymentChange}
-                                                    />
-                                                    <label className='color-label' htmlFor={option.value}><span className={`payment`}></span></label>
-                                                    <p className="text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px]">Plataformas de pago</p>
-                                                </div>
-                                                <div className="flex sm:flex-row mg:flex-row lg:flex-row gap-2">
-                                                    <img src="/images/pp.svg" alt="logo" />
-                                                    <img src="/images/mercado.svg" alt="logo" />
-                                                </div>
-                                            </>
-                                            :
-                                            <>
-                                                <div className='flex text-left gap-2 items-center'>
-
-                                                    <input
-                                                        type="radio"
-                                                        id={option.value}
-                                                        name="payment" // All radios in a group share the same name
-                                                        value={option.value}
-                                                        checked={selectedValuePayment === option.value}
-                                                        onChange={handlePaymentChange}
-                                                    />
-                                                    <label className='color-label' htmlFor={option.value}><span className={`payment`}></span></label>
-                                                    <p className="text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px]">Genera una referencia de pago</p>
-                                                </div>
-                                                <span className="material-symbols-outlined text-[44px]! text-[#BA9560]">
-                                                    request_quote
-                                                </span>
-                                            </>
+                                                <input
+                                                    type="radio"
+                                                    id={option.value}
+                                                    name="payment" // All radios in a group share the same name
+                                                    value={option.value}
+                                                    checked={selectedValuePayment === option.value}
+                                                    onChange={handlePaymentChange}
+                                                />
+                                                <label className='color-label' htmlFor={option.value}><span className={`payment`}></span></label>
+                                                <p className="text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px]">Genera una referencia de pago</p>
+                                            </div>
+                                            <span className="material-symbols-outlined text-[44px]! text-[#BA9560]">
+                                                request_quote
+                                            </span>
+                                        </>
                                 }
                             </div>
                         </div>
@@ -231,7 +250,7 @@ const PaymentSummary = ({ order, productId }) => {
                     <div className="mt-10">
                         <hr className="border-[#BA9560] -mb-7" />
                         <a className="p-3 border border-[#BA9560] rounded-[15px] text-#4D3A11 block w-fit mx-auto bg-white" href="#">Forma de pago</a>
-                    </div> 
+                    </div>
 
                     <p className="mt-3 text-[#777777] text-center max-w-[660px] mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum  sapien lectus, luctus eget lacinia in, ultricies a diam.</p>
 
@@ -262,14 +281,35 @@ const PaymentSummary = ({ order, productId }) => {
                     <h2 className="text-[25px] text-[#B85564] font-bold my-12">Detalle de tu pedido</h2>
 
                     {Array.from({ length: quantity }, (_, index) => (
-                        <div key={index} className="flex justify-between items-center w-full flex-col sm:flex-row md:flex-row lg:flex-row gap-2">
-                            <div className="flex gap-4 items-center">
-                                <img className="max-w-[50px]" src={`/images/products/${order.images[0].image}`} alt="product" />
-                                <p className="max-w-60">{order.title}</p>
-                            </div>
-                            <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">${order?.discount ? finalPrice - order.discount : finalPrice} MXN</h3>
-                        </div>
+                        <div key={index} className="flex flex-col gap-4">
+                            {order.isBundle ?
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex justify-between items-center w-full flex-col sm:flex-row md:flex-row lg:flex-row gap-2">
+                                        <div className="flex gap-4 items-center">
+                                            <img className="max-w-[50px]" src={`/images/products/${order.images[0].image}`} alt="product" />
+                                            <p className="max-w-60">{order.title}</p>
+                                        </div>
+                                        <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">{formatterUS.format(order?.discount ? order.price - order.discount : order.price)} MXN</h3>
+                                    </div>
+                                    <div className="flex justify-between items-center w-full flex-col sm:flex-row md:flex-row lg:flex-row gap-2">
+                                        <div className="flex gap-4 items-center">
+                                            <img className="max-w-[50px]" src={`/images/products/${image}`} alt="product" />
+                                            <p className="max-w-60">Paquete de Gigabytes</p>
+                                        </div>
+                                        <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">{formatterUS.format(Number(searchParams.get('price')))} MXN</h3>
+                                    </div>
+                                </div>
+                                :
+                                <div className="flex justify-between items-center w-full flex-col sm:flex-row md:flex-row lg:flex-row gap-2">
+                                    <div className="flex gap-4 items-center">
+                                        <img className="max-w-[50px]" src={`/images/products/${image}`} alt="product" />
+                                        <p className="max-w-60">{order.title}</p>
+                                    </div>
+                                    <h3 className="ml-16 sm:ml-0 md:ml-0 lg:ml-0">{formatterUS.format(Number(searchParams.get('price')))} MXN</h3>
+                                </div>
+                            }
 
+                        </div>
                     ))}
 
                     <hr className="my-8 opacity-30" />
@@ -287,7 +327,7 @@ const PaymentSummary = ({ order, productId }) => {
                                 <span className="material-symbols-outlined text-[#BA9560]">
                                     info
                                 </span>
-                                <p className="text-[#4D3A11]">Son los 16 a 18 dígitos que están atrás de tu tarjeta SIM, debajo del código de barras atrás de tu tarjeta SIM que terminan en F.</p>
+                                <p className="text-[#4D3A11]">Se enviará un código mediante un mensaje de texto a este número para verificar y activar el eSIM.</p>
                             </div>
                         </div>
                     </div>
@@ -333,7 +373,7 @@ const PaymentSummary = ({ order, productId }) => {
                                                     <p className="text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px]">{option.caption}</p>
                                                 </div>
                                                 <div className="flex sm:flex-row mg:flex-row lg:flex-row gap-2">
-                                                    ${option.price} MXN
+                                                    {formatterUS.format(option.price)} MXN
                                                 </div>
                                             </label>
 
@@ -349,23 +389,37 @@ const PaymentSummary = ({ order, productId }) => {
                     }
 
                     <div className="flex flex-col gap-4 items-end">
-                        {order?.discount ?
-                            <>
+                        <div className="flex gap-4 items-center">
+                            <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo</h3>
+                            <p>{formatterUS.format((Number(finalPrice) * quantity))} MXN</p>
+                        </div>
+
+                        {
+                            //si tiene descuento
+                            order?.discount > 0 ?
                                 <div className="flex gap-4 items-center">
                                     <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Descuento</h3>
-                                    <p>${order?.discount} MXN</p>
+                                    <p>{formatterUS.format(order?.discount)} MXN</p>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                    <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo con descuento</h3>
-                                    <p>${((finalPrice - order?.discount) * quantity) + Number(precioMemb)} MXN</p>
-                                </div>
-                            </>
-                            :
-                            <div className="flex gap-4 items-center">
-                                <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo</h3>
-                                <p>${(finalPrice * quantity) + Number(precioMemb)} MXN</p>
-                            </div>
+                                :
+                                ""
                         }
+
+                        {
+                            //si tiene costo de envio
+                            order?.envio > 0 ?
+                                <div className="flex gap-4 items-center">
+                                    <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo de envio</h3>
+                                    <p>{formatterUS.format(order.envio)} MXN</p>
+                                </div>
+                                :
+                                ""
+                        }                        
+
+                        <div className="flex gap-4 items-center">
+                            <h3 className="text-[#9B2649] font-bold text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-right">Costo total</h3>
+                            <p>{formatterUS.format(order.envio + Number(finalPrice) + Number(precioMemb))} MXN</p>
+                        </div>
 
                         <button
                             type="submit"

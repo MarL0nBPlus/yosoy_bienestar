@@ -12,6 +12,7 @@ const Jumbotron = ({ title, thecaption, cssClass, junBtn, junBtnUrl }) => {
     children: (
       <div className="w-full sm:w-7xl md:w-7xl lg:w-7xl mx-auto flex gap-12 items-start relative z-20 px-12 sm:px-0 md:px-0 lg:px-0">
         <div className="flex flex-col gap-4">
+          <h3 className="text-[#9B264A] font-bold text-[30px]">#HazElSwitch</h3>
           <h2 className="text-[#BA9560] text-[30px] sm:text-[62px] md:text-[62px] lg:text-[62px] leading-[34px] sm:leading-[66px] md:leading-[66px] lg:leading-[66px] font-black max-w-[660px]">
             {title != "" ? ReactHtmlParser(title) : ""}
           </h2>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id, price, type }) => {
+const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id, price, type, isTech }) => {
     const [quantity, setQuantity] = useState(initialQuantity);
     const [selectedColor, setSelectedColor] = useState('default');
     const router = useRouter()
@@ -74,24 +74,29 @@ const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id, price,
                     :
                     ""
             }
-            <div>
-                <h2 className='text-[#777777] my-2'>Cantidad</h2>
-                <div className='flex gap-1'>
-                    <div className='justify-center bg-white py-2 px-4 rounded-[50px] gap-2 shadow-2xs' style={{ display: 'flex', alignItems: 'center' }}>
-                        <button className='text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] cursor-pointer' onClick={handleDecrement}>-</button>
-                        <input
-                            id='quantity'
-                            type="number"
-                            className='border border-[#9B2649] text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] rounded-[5px] bg-linear-to-t from-[#F2F2F2] to-white'
-                            value={quantity}
-                            onChange={handleChange}
-                            min="1"
-                            style={{ width: '50px', textAlign: 'center' }}
-                        />
-                        <button className='text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] cursor-pointer' onClick={handleIncrement}>+</button>
+            {!isTech ?
+                <div>
+                    <h2 className='text-[#777777] my-2'>Cantidad</h2>
+                    <div className='flex gap-1'>
+                        <div className='justify-center bg-white py-2 px-4 rounded-[50px] gap-2 shadow-2xs' style={{ display: 'flex', alignItems: 'center' }}>
+                            <button className='text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] cursor-pointer' onClick={handleDecrement}>-</button>
+                            <input
+                                id='quantity'
+                                type="number"
+                                className='border border-[#9B2649] text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] rounded-[5px] bg-linear-to-t from-[#F2F2F2] to-white'
+                                value={quantity}
+                                onChange={handleChange}
+                                min="1"
+                                style={{ width: '50px', textAlign: 'center' }}
+                            />
+                            <button className='text-[#9B2649] text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] cursor-pointer' onClick={handleIncrement}>+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                :
+                ""
+            }
+
 
             {/*
                         <button
@@ -104,8 +109,8 @@ const ProductForm = ({ initialQuantity = 1, onQuantityChange, colors, id, price,
                         </button>
                         */}
 
-            <button type="button" 
-            onClick={() => router.push(`/payment_page/${id}?qty=${quantity}&price=${price}&type=${type}&color=${selectedColor}`)}
+            <button type="button"
+                onClick={() => router.push(`/payment_page/${id}?qty=${quantity}&price=${price}&type=${type}&color=${selectedColor}`)}
                 className="text-white bg-[#9B264A] hover:text-black rounded-[50px] py-2 px-12 my-4 flex items-center justify-center w-full overflow-hidden uppercase text-[17px] relative group cursor-pointer"
 
             >

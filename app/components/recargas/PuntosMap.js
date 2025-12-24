@@ -35,7 +35,7 @@ const PuntosMap = () => {
                         <div className="flex flex-1 bg-[#F5F5F5] border border-[#B85564] rounded-[15px] py-2 px-4">
                             <div className="flex items-center gap-1 mr-1">
                                 <span className="material-symbols-outlined text-[#4A4A4A]/50">
-                                    tablet_mac
+                                    home_pin
                                 </span>
                             </div>
                             <input type="text" className="flex-1" placeholder="Ingresa tu Código Postal" />
@@ -83,7 +83,7 @@ const PuntosMap = () => {
                     href="#"
                 >
                     <span className="absolute w-100 h-0 transition-all duration-300 origin-center rotate-0 -translate-x-20 bg-black top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                    <span className="relative  transition duration-300 group-hover:text-white ease">Ubicar tiendas</span>
+                    <span className="relative  transition duration-300 group-hover:text-white ease">Ver más ubicaciones</span>
                 </a>
             </div>
         </section>
